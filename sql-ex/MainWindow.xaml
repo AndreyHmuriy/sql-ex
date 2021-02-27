@@ -1,0 +1,173 @@
+﻿<Window x:Class="sql_ex.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:sql_ex"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <Window.Resources>
+        <Style x:Key="BtnStyle" TargetType="Button">
+            <Setter Property="Width" Value="25"/>
+            <Setter Property="Margin" Value="1"/>
+        </Style>
+        
+        <!--Стиль для кнопок с заданиями в базе данных ComputerFirm-->
+        <Style x:Key="btnComputerFirm" TargetType="Button" BasedOn="{StaticResource BtnStyle}">
+            <Setter Property="Control.Background" Value="Aqua"/>
+        </Style>
+
+        <!--Стиль для кнопок с заданиями в базе данных Ships-->
+        <Style x:Key="btnShips" TargetType="Button" BasedOn="{StaticResource BtnStyle}">
+            <Setter Property="Control.Background" Value="LightGreen"/>
+        </Style>
+
+        <!--Стиль для кнопок с заданиями в базе данных RecyclingFirm-->
+        <Style x:Key="btnRecyclingFirm" TargetType="Button" BasedOn="{StaticResource BtnStyle}">
+            <Setter Property="Control.Background" Value="BlanchedAlmond"/>
+        </Style>
+    </Window.Resources>
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="0.3*"/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition />
+            <RowDefinition Height="30"/>
+        </Grid.RowDefinitions>
+        <TabControl Grid.Column="0" Grid.RowSpan="2">
+            <TabItem Header="Select">
+                <WrapPanel x:Name="taskButtons" Background="LightSteelBlue" >
+                    <Button Style="{StaticResource btnComputerFirm}" Click="Task1">1</Button>
+                    <Button Style="{StaticResource btnComputerFirm}" Click="Task2">2</Button>
+                    <Button Style="{StaticResource btnComputerFirm}" Click="Task3">3</Button>
+                    <Button Style="{StaticResource btnComputerFirm}" Click="Task4">4</Button>
+                    <Button Style="{StaticResource btnComputerFirm}" Click="Task5">5</Button>
+                    <Button Style="{StaticResource btnComputerFirm}" Click="Task6">6</Button>
+                    <Button Style="{StaticResource btnComputerFirm}" Click="Task7">7</Button>
+                    <Button Style="{StaticResource btnComputerFirm}" Click="Task8">8</Button>
+                    <Button Style="{StaticResource btnComputerFirm}" Click="Task9">9</Button>
+                    <Button Style="{StaticResource btnComputerFirm}" Click="Task10">10</Button>
+                    <Button Style="{StaticResource btnComputerFirm}" Click="Task11">11</Button>
+                    <Button Style="{StaticResource btnComputerFirm}" Click="Task12">12</Button>
+                    <Button Style="{StaticResource btnComputerFirm}" Click="Task13">13</Button>
+                    <Button Style="{StaticResource btnShips}" Click="Task14">14</Button>
+                    <Button Style="{StaticResource btnComputerFirm}" Click="Task15">15</Button>
+                    <Button Style="{StaticResource btnComputerFirm}" Click="Task16">16</Button>
+                    <Button Style="{StaticResource btnComputerFirm}" Click="Task17">17</Button>
+                    <Button Style="{StaticResource btnComputerFirm}" Click="Task18">18</Button>
+                    <Button Style="{StaticResource btnComputerFirm}" Click="Task19">19</Button>
+                    <Button Style="{StaticResource btnComputerFirm}" Click="Task20">20</Button>
+                    <Button Style="{StaticResource btnComputerFirm}" Click="Task21">21</Button>
+                    <Button Style="{StaticResource btnComputerFirm}" Click="Task22">22</Button>
+                    <Button Style="{StaticResource btnComputerFirm}" Click="Task23">23</Button>
+                    <Button Style="{StaticResource btnComputerFirm}" Click="Task24">24</Button>
+                    <Button Style="{StaticResource btnComputerFirm}" Click="Task25">25</Button>
+                    <Button Style="{StaticResource btnComputerFirm}" Click="Task26">26</Button>
+                    <Button Style="{StaticResource btnComputerFirm}" Click="Task27">27</Button>
+                    <Button Style="{StaticResource btnComputerFirm}" Click="Task28">28</Button>
+                    <Button Style="{StaticResource btnRecyclingFirm}" Click="Task29">29</Button>
+                    <Button Style="{StaticResource btnRecyclingFirm}" Click="Task30">30</Button>
+                    <Button Style="{StaticResource btnShips}" Click="Task31">31</Button>
+                    <Button Style="{StaticResource btnShips}" Click="Task32">32</Button>
+                    <Button Style="{StaticResource btnShips}" Click="Task33">33</Button>
+                    <Button Style="{StaticResource btnShips}" Click="Task34">34</Button>
+                    <Button Style="{StaticResource btnComputerFirm}" Click="Task35">35</Button>
+                    <Button Style="{StaticResource btnShips}" Click="Task36">36</Button>
+                    <Button Style="{StaticResource btnShips}" Click="Task37">37</Button>
+                    <Button Style="{StaticResource btnShips}" Click="Task38">38</Button>
+                    <Button Style="{StaticResource btnShips}" Click="Task39">39</Button>
+                    <Button Style="{StaticResource btnComputerFirm}" Click="Task40">40</Button>
+                    <Button Style="{StaticResource btnComputerFirm}" Click="Task41">41</Button>
+                    <Button Style="{StaticResource btnShips}" Click="Task42">42</Button>
+                    <Button Style="{StaticResource btnShips}" Click="Task43">43</Button>
+                    <Button Style="{StaticResource btnShips}" Click="Task44">44</Button>
+                    <Button Style="{StaticResource btnShips}" Click="Task45">45</Button>
+                    <Button Style="{StaticResource btnShips}" Click="Task46">46</Button>
+                    <Button Style="{StaticResource btnShips}" Click="Task47">47</Button>
+                    <Button Style="{StaticResource btnShips}" Click="Task48">48</Button>
+                    <Button Style="{StaticResource btnShips}" Click="Task49">49</Button>
+                    <Button Style="{StaticResource btnShips}" Click="Task50">50</Button>
+                    <Button Style="{StaticResource btnShips}" Click="Task51">51</Button>
+                    <Button Style="{StaticResource btnShips}" Click="Task52">52</Button>
+                    <Button Style="{StaticResource btnShips}" Click="Task53">53</Button>
+                    <Button Style="{StaticResource btnShips}" Click="Task54">54</Button>
+                    <Button Style="{StaticResource btnShips}" Click="Task55">55</Button>
+                    <Button Style="{StaticResource btnShips}" Click="Task56">56</Button>
+                    <Button Style="{StaticResource btnShips}" Click="Task57">57</Button>
+                    <Button Style="{StaticResource btnComputerFirm}" Click="Task58">58</Button>
+                    <Button Style="{StaticResource btnRecyclingFirm}" Click="Task59">59</Button>
+                    <Button Style="{StaticResource btnRecyclingFirm}" Click="Task60">60</Button>
+                </WrapPanel>
+            </TabItem>
+            <TabItem Header="DML">
+                <WrapPanel Background="Beige" >
+                    <!--<Button Click="DML_AddProduct" ToolTip="Добавить запись в таблицу Product">1</Button>-->
+                    <!--<Button Click="Task2">2</Button>
+                    <Button Click="Task3">3</Button>
+                    <Button Click="Task4">4</Button>
+                    <Button Click="Task5">5</Button>
+                    <Button Click="Task6">6</Button>
+                    <Button Click="Task7">7</Button>
+                    <Button Click="Task8">8</Button>
+                    <Button Click="Task9">9</Button>
+                    <Button Click="Task10">10</Button>
+                    <Button Click="Task11">11</Button>
+                    <Button Click="Task12">12</Button>
+                    <Button Click="Task13">13</Button>
+                    <Button Click="Task14">14</Button>
+                    <Button Click="Task15">15</Button>
+                    <Button Click="Task16">16</Button>
+                    <Button Click="Task17">17</Button>
+                    <Button Click="Task18">18</Button>
+                    <Button Click="Task19">19</Button>
+                    <Button Click="Task20">20</Button>
+                    <Button Click="Task21">21</Button>
+                    <Button Click="Task22">22</Button>
+                    <Button Click="Task23">23</Button>
+                    <Button Click="Task24">24</Button>
+                    <Button Click="Task25">25</Button>
+                    <Button Click="Task26">26</Button>
+                    <Button Click="Task27">27</Button>
+                    <Button Click="Task28">28</Button>
+                    <Button Click="Task29">29</Button>
+                    <Button Click="Task30">30</Button>
+                    <Button Click="Task31">31</Button>
+                    <Button Click="Task32">32</Button>
+                    <Button Click="Task33">33</Button>
+                    <Button Click="Task34">34</Button>
+                    <Button Click="Task35">35</Button>
+                    <Button Click="Task36">36</Button>
+                    <Button Click="Task37">37</Button>
+                    <Button Click="Task38">38</Button>
+                    <Button Click="Task39">39</Button>
+                    <Button Click="Task40">40</Button>
+                    <Button Click="Task41">41</Button>
+                    <Button Click="Task42">42</Button>
+                    <Button Click="Task43">43</Button>
+                    <Button Click="Task44">44</Button>
+                    <Button Click="Task45">45</Button>
+                    <Button Click="Task46">46</Button>
+                    <Button Click="Task47">47</Button>
+                    <Button Click="Task48">48</Button>
+                    <Button Click="Task49">49</Button>
+                    <Button Click="Task50">50</Button>
+                    <Button Click="Task51">51</Button>
+                    <Button Click="Task52">52</Button>
+                    <Button Click="Task53">53</Button>
+                    <Button Click="Task54">54</Button>
+                    <Button Click="Task55">55</Button>
+                    <Button Click="Task56">56</Button>
+                    <Button Click="Task57">57</Button>
+                    <Button Click="Task58">58</Button>
+                    <Button Click="Task59">59</Button>
+                    <Button Click="Task60">60</Button>-->
+                </WrapPanel>
+            </TabItem>
+        </TabControl>
+        <ListView x:Name="lstvwQueryResult" Grid.Row="0" Grid.Column="1" HorizontalAlignment="Stretch">
+        </ListView>
+        <TextBlock Text="{Binding ElementName=lstvwQueryResult,Path=Items.Count}" Grid.Row="1" Grid.Column="1"/>
+    </Grid>
+</Window>
