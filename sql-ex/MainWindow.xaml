@@ -103,6 +103,7 @@
             </TabItem>
             <TabItem Header="DML">
                 <WrapPanel Background="Beige" >
+                    <Button Click="OpenForm">Open</Button>
                     <!--<Button Click="DML_AddProduct" ToolTip="Добавить запись в таблицу Product">1</Button>-->
                     <!--<Button Click="Task2">2</Button>
                     <Button Click="Task3">3</Button>

@@ -199,6 +199,9 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Compile Include="ComputerFirm\ComputerFirmContext.cs" />
+    <Compile Include="ComputerFirm\FmComputerFirm.xaml.cs">
+      <DependentUpon>FmComputerFirm.xaml</DependentUpon>
+    </Compile>
     <Compile Include="ComputerFirm\Laptop.cs" />
     <Compile Include="ComputerFirm\PC.cs" />
     <Compile Include="ComputerFirm\Printer.cs" />
@@ -211,6 +214,10 @@
     <Compile Include="Ships\Ships.cs" />
     <Compile Include="Ships\ShipsContext.cs" />
     <Compile Include="Tasks.cs" />
+    <Page Include="ComputerFirm\FmComputerFirm.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>

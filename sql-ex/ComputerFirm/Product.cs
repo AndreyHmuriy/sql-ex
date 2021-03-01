@@ -12,7 +12,7 @@ namespace sql_ex.ComputerFirmEntity
     {
         #region Столбцы
         [Required,
-            MaxLength(10),
+         MaxLength(10),
          Column("maker")]
         public string Maker { get; set; }
 
@@ -22,7 +22,8 @@ namespace sql_ex.ComputerFirmEntity
          Column("model")]
         public string Model { get; set; }
 
-        [Required,MaxLength(50),
+        [Required,
+         MaxLength(50),
          Column("type")]
         public string Type { get; set; }
         #endregion

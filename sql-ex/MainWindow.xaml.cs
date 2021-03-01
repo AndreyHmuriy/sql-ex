@@ -1,6 +1,10 @@
-﻿using System.Windows;
+﻿using System.Collections;
+using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Data;
+using System.Linq;
+using System.Collections.Generic;
+using Microsoft.EntityFrameworkCore;
 
 namespace sql_ex
 {
@@ -622,31 +626,83 @@ namespace sql_ex
         }
         //#endregion
 
-        //public void DML_AddProduct(object sender, RoutedEventArgs e)
-        //{
-        //    Product product = new Product()
-        //    {
-        //        Model = "7777",
-        //        Maker = "G",
-        //        Type = "PC"
-        //    };
-
-        //    if (computerFirm.AddProduct(product))
-        //    {
-        //        MessageBox.Show("Запись добавлена в Product");
-        //    }
-        //    else
-        //    {
-        //        MessageBox.Show("Возникла ошибка");
-        //    }
-        //}
-
-        public void DML_AddPrinter(object sender, RoutedEvent e)
+        private void OpenForm(object sender, RoutedEventArgs e)
         {
-            //Printer printer = new Printer()
-            //{
+            ArrayList list = new ArrayList();
+            list.AddRange(LaptopWithMaker.GetLaptopsWithMaker());
+            list.AddRange(PCWithMaker.GetPCsWithMaker());
+            list.AddRange(PrinterWithMaker.GetPrintersWithMaker());
 
-            //};
+            var c = new ComputerFirm.FmComputerFirm();
+            c.lstbxComputerFirm.Items.Clear();
+            c.lstbxComputerFirm.ItemsSource = list;
+            c.Show();
+        }
+    }
+
+    class LaptopWithMaker:ComputerFirmEntity.Laptop
+    {
+        public string Maker { get; set; }
+
+        public LaptopWithMaker(string maker, int code, string model, short speed, short ram, float hd, double? price, byte screen)
+            :base(code,model,speed,ram,hd,price,screen)
+        {
+            Maker = maker;
+        }
+
+        public static List<LaptopWithMaker> GetLaptopsWithMaker()
+        {
+            using (var context = new ComputerFirmEntity.ComputerFirmContext())
+            {
+                var data = context.Laptop.Include(x => x.Product)
+                    .Select(x => new LaptopWithMaker(x.Product.Maker, x.Code, x.Model, x.Speed, x.RAM, x.HD, x.Price, x.Screen))
+                    .ToList();
+                return data;
+            }
+        }
+    }
+
+    class PCWithMaker : ComputerFirmEntity.PC
+    {
+        public string Maker { get; set; }
+
+        public PCWithMaker(string maker, int code, string model, short speed, short ram, float hd, string cd, double? price)
+            : base(code, model, speed, ram, hd, cd, price)
+        {
+            Maker = maker;
+        }
+
+        public static List<PCWithMaker> GetPCsWithMaker()
+        {
+            using (var context = new ComputerFirmEntity.ComputerFirmContext())
+            {
+                var data = context.PC.Include(x => x.Product)
+                    .Select(x => new PCWithMaker(x.Product.Maker, x.Code, x.Model, x.Speed, x.RAM, x.HD, x.CD, x.Price))
+                    .ToList();
+                return data;
+            }
+        }
+    }
+
+    class PrinterWithMaker:ComputerFirmEntity.Printer
+    {
+        public string Maker { get; set; }
+
+        public PrinterWithMaker(string maker,int code,string model,char color,string type,double? price)
+            :base(code,model,color,type,price)
+        {
+            Maker = maker;
+        }
+
+        public static List<PrinterWithMaker> GetPrintersWithMaker()
+        {
+            using (var context = new ComputerFirmEntity.ComputerFirmContext())
+            {
+                var data = context.Printer.Include(x => x.Product)
+                    .Select(x => new PrinterWithMaker(x.Product.Maker, x.Code, x.Model, x.Color,x.Type, x.Price))
+                    .ToList();
+                return data;
+            }
         }
     }
 }
